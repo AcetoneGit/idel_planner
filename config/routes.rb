@@ -9,4 +9,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  get 'patients/index'
+  get 'patients/new'
+  get 'patients/show'
+  get 'patients/edit'
 end
