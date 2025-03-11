@@ -44,3 +44,5 @@ Patient.create!(first_name: "Claire", last_name:"Tanguy", address: "25 Route de 
 Patient.create!(first_name: "Jérome", last_name:"Pires", address: "26 Route de Lyon 69280 Sainte-Consorce", date_of_birth: "24/11/1964", social_security_number: "1 69 00 00 000 000 00", mutual: "MGEN",referring_doctor:"Dr. David Girard", group: group_1)
 
 puts "finsished"
+
+puts "Ceci est un test"
