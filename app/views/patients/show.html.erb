@@ -57,7 +57,7 @@
           Pathologie
         </button>
         <div class="collapse" id="pathologieDropdown">
-          <div class="card card-body-follow mb-2">
+          <div class="card card-body-follow">
             <div class="d-flex align-items-center">
                 <h5 class="fw-bold">Nouvelle pathologie</h5>
               <%= link_to patient_pathologies_path(@patient), class: "" do %>
@@ -97,7 +97,7 @@
           Ordonnances
         </button>
         <div class="collapse" id="ordonnancesDropdown">
-          <div class="card card-body d-flex flex-column gap-2">
+          <div class="card card-body d-flex flex-column gap-">
             <%= form_with(model: @patient, url: upload_ordonnance_patient_path(@patient), method: :post, local: true, html: { multipart: true }) do |form| %>
               <div class="mb-3">
                 <%= form.label :ordonnances, "Ajouter une ou plusieurs ordonnances", class: "form-label" %>
@@ -123,11 +123,11 @@
                 </div>
               </div>
 
-              <%= form.submit "Uploader", class: "btn m-2 bluecolor" %>
+              <%= form.submit "Uploader", class: "btn m-0,5 bluecolor" %>
               <% end %>
 
 
-            <ul class="mt-2">
+            <ul class="mt-0,5">
               <% if @patient.ordonnances.attached? %>
                 <% @patient.ordonnances.each do |ordonnance| %>
                   <li>
