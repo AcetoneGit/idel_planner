@@ -6,6 +6,7 @@ Patient.destroy_all
 Group.destroy_all
 Pathology.destroy_all
 Note.destroy_all
+Report.destroy_all
 
 group_1 = Group.create!
 
@@ -61,6 +62,8 @@ summaries = [
   "Bandages a prévoir moins serrés",
 ]
 
+report= Report.create!(text: "Relève test")
+
 puts "creating appointments"
 50.times do
   start_datetime = rand(Time.now..(Time.now + 3.months))
@@ -70,7 +73,7 @@ puts "creating appointments"
 
   final_datetime = start_datetime + duration
 
-  Appointment.create!(start_date: start_datetime, end_date: final_datetime, user: User.all.sample, patient: Patient.all.sample, reason: reasons.sample, summary: summaries.sample)
+  Appointment.create!(report: report,start_date: start_datetime, end_date: final_datetime, user: User.all.sample, patient: Patient.all.sample, reason: reasons.sample, summary: summaries.sample)
 end
 
 puts "creating pathologies"
@@ -124,5 +127,7 @@ Patient.all.each do |patient|
     )
   end
 end
+
+
 
 puts "finished"

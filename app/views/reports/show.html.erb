@@ -1,0 +1,14 @@
+<div class="container text-center">
+  <h1>RELEVE</h1>
+</div>
+
+<%= link_to "← Retour", reports_path, class: "btn btn-secondary position-fixed top-0 start-0 m-3" %>
+
+<div class="container">
+  <h1>Liste des résumés de la semaine</h1>
+  <% @appointments.first(10).each do |appointment| %>
+    <div class="card mb-3">
+        <h5 class="card-title"><%= appointment.summary %></h5>
+    </div>
+  <% end %>
+</div>

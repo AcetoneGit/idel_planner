@@ -17,10 +17,11 @@ Rails.application.routes.draw do
     resources :notes
     resources :pathologies
     member do
-      post :upload_ordonnance   
+      post :upload_ordonnance
       delete :destroy_ordonnance
     end
   end
 
   get "profile" => "users#profile"
+  resources :reports
 end
