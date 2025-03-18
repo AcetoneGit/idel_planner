@@ -51,11 +51,11 @@ class AppointmentsController < ApplicationController
 
     case params[:display]
     when 'month'
-      year = (params[:year].to_i if params[:year].to_i > 0) || Date.today.year
+      year = (params[:year].to_i if params[:year].to_i.positive?) || Date.today.year
       month = (params[:month].to_i if (1..12).include?(params[:month].to_i)) || Date.today.month
       @current_month = Date.new(year, month, 1)
     when 'week'
-      @days = @day.beginning_of_week(:monday)..@day.end_of_week(:monday) + 1
+      @days = @day.beginning_of_week(:monday)..@day.end_of_week(:monday)
       @appointments = Appointment.where(user: current_user, date: @days)
     else # when 'day' or default
       @appointments = Appointment.where(user: current_user, date: @day.all_day)

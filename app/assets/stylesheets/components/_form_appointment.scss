@@ -5,14 +5,13 @@
   left: 0;
   width: 100%;
   height: 0;
-  background-color: #1B2331;
+  background-color: $blanc-50;
   backdrop-filter: blur(10px);
   border-radius: 16px 16px 0 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
   box-sizing: border-box;
-  color: white;
-  font-weight: bold;
+  color: $noir-950;
   &.active {
     height: 60vh;
   }
