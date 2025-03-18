@@ -1,0 +1,21 @@
+.current-time-indicator {
+  position: absolute;
+  left: 60px;
+  width: 82%;
+  height: 2px;
+  background-color: red;
+  opacity: 0.5;
+  z-index: 100;
+}
+
+.current-time-indicator::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: red;
+  transform: translate(-50%, -3px);
+}
