@@ -1,83 +1,81 @@
-$primary-color: rgb(17, 98, 145);
-$danger-color: #ff4d4d;
-$gray-border: #e0e0e0;
-$light-bg: #f8f9fa;
-$text-dark: #333;
-$input-border: #ced4da;
-$button-shadow: rgba(255, 77, 77, 0.2);
-$border-radius: 10px;
-
 .report-card {
   background: #ffffff;
-  border: 1px solid $gray-border;
-  border-radius: $border-radius;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .card-header {
   background: transparent;
   border-bottom: none;
-  text-align: center;
 }
 
 .report-text {
-  background: $light-bg;
-  border: 1px solid $gray-border;
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 15px;
   font-size: 14px;
   line-height: 1.6;
-  color: $text-dark;
+  color: #333;
   white-space: pre-wrap;
 }
 
 .text-area {
-  border: 2px solid $input-border;
+  border: 2px solid #ced4da;
   border-radius: 5px;
   font-size: 14px;
   line-height: 1.5;
-  padding: 10px;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.edit-patient {
+  background: rgb(17, 98, 145);
+  color: #fff;
   padding: 0.4rem 0.8rem;
   margin: 10px auto;
   border-radius: 0.75rem;
   width: 400px;
   height: 50px;
-  font-size: 1rem;
   text-align: center;
-  text-decoration: none;
+  font-size: 1rem;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 2px 6px $button-shadow;
+  box-shadow: 0 2px 6px rgba(255, 77, 77, 0.2);
+  display: inline-flex;
+  align-items: center;
   gap: 0.4rem;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.9;
-  }
 }
 
-// Bouton Modifier
-.edit-patient {
-  @extend .btn;
-  background: $primary-color;
-  color: #fff;
-}
-
-// Bouton Annuler
 .annuler-edit-patient {
-  @extend .btn;
   background: rgba($bleu-700, 0.1);
   color: $bleu-700;
+  padding: 0.4rem 0.8rem;
+  margin: 10px auto;
+  border-radius: 0.75rem;
+  width: 400px;
+  height: 50px;
+  text-align: center;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(255, 77, 77, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
-// Bouton Supprimer
 .delete-reports {
-  @extend .btn;
-  background-color: $danger-color;
+  background-color: #ff4d4d;
   color: #fff;
+  padding: 0.4rem 0.8rem;
+  margin: 10px auto;
+  border-radius: 0.75rem;
+  width: 400px;
+  height: 50px;
+  text-align: center;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(255, 77, 77, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
 }
