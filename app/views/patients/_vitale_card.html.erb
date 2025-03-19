@@ -3,7 +3,7 @@
     <div class="vitale-card-content">
         <%= image_tag "ship.jpg", class: "vitale-ship" %>
       <div class="vitale-info">
-         <h2 class="vitale-name d-flex">
+        <h2 class="vitale-name d-flex">
           <div data-controller="editable"
               data-editable-url-value="<%= patient_path(@patient) %>"
               data-editable-field-name-value="first_name"
@@ -26,9 +26,9 @@
           </p>
         <p class="vitale-infos">
           <span data-controller="editable"
-               data-editable-url-value="<%= patient_path(@patient) %>"
-               data-editable-field-name-value="mutual"
-               data-editable-target="field" contenteditable="true" data-action="dblclick->editable#edit blur->editable#update">
+              data-editable-url-value="<%= patient_path(@patient) %>"
+              data-editable-field-name-value="mutual"
+              data-editable-target="field" contenteditable="true" data-action="dblclick->editable#edit blur->editable#update">
             <%= @patient.mutual %>
           </span>
           </p>
@@ -36,9 +36,9 @@
       <div class="vitale-logo-text">Vitale</div>
       <div class="vitale-numero">
         <span data-controller="editable"
-               data-editable-url-value="<%= patient_path(@patient) %>"
-               data-editable-field-name-value="social_security_number"
-               data-editable-target="field" contenteditable="true" data-action="dblclick->editable#edit blur->editable#update">
+              data-editable-url-value="<%= patient_path(@patient) %>"
+              data-editable-field-name-value="social_security_number"
+              data-editable-target="field" contenteditable="true" data-action="dblclick->editable#edit blur->editable#update">
             <%= @patient.social_security_number || "Numéro SS non renseigné"%>
         </span>
       </div>

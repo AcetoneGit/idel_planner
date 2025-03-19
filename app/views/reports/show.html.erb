@@ -13,21 +13,21 @@
               <%= f.text_area :text, class: "form-control text-area", rows: 8 %>
             </div>
             <div class="d-flex justify-content-center gap-2">
-              <%= f.submit "Enregistrer", class: "btn btn-outline-dark w-50" %>
-              <%= link_to "Annuler", report_path(@report), class: "btn btn-light w-50", data: { turbo_frame: "_top" } %>
+              <%= f.submit "Enregistrer", class: "edit-patient w-50" %>
+              <%= link_to "Annuler", report_path(@report), class: "annuler-edit-patient d-flex align-items-center justify-content-center text-decoration-none w-50", data: { turbo_frame: "_top" } %>
             </div>
           <% end %>
         <% else %>
           <pre class="report-text"><%= @report.text&.html_safe %></pre>
           <div class="text-center mt-3">
-            <%= link_to "Modifier", report_path(@report, editing: true), class: "btn btn-outline-dark w-100", data: { turbo_frame: "_top" } %>
+            <%= link_to "Modifier", report_path(@report, editing: true), class: "edit-patient d-flex align-items-center justify-content-center text-decoration-none w-100", data: { turbo_frame: "_top" } %>
           </div>
         <% end %>
       <% end %>
       <div class="text-center mt-3">
       <%= link_to 'Supprimer', report_path(@report),
                   data: { turbo_method: :delete, turbo_confirm: 'Êtes-vous sûr de vouloir supprimer ce rapport ?' },
-                  class: "btn btn-outline-danger w-100" %>
+                  class: "delete-reports d-flex align-items-center justify-content-center text-decoration-none w-100" %>
     </div>
     </div>
   </div>
