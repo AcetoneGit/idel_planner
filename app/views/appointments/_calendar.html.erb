@@ -1,35 +1,30 @@
-  <div class="calendar">
-  <% if params[:display] == 'week' %>
-    <div class="week-dates">
-      <div class="empty-cell"></div>
-      <% 7.times do |i| %>
-        <div class="date-cell <%= 'today' if Date.today == Date.today.beginning_of_week + i.days %>">
-            <%= Appointment::DAY_NAMES[i] %>
+<div class="calendar" data-controller="dynamic-daybar" data-dynamic-daybar-start-of-week-value="<%= Date.today.beginning_of_week.strftime('%Y-%m-%d') %>">
+  <div class="week-dates" data-dynamic-daybar-target="weekDates">
+    <div class="empty-cell"></div>
+    <% 7.times do |i| %>
+      <div class="date-cell" data-dynamic-daybar-target="dateCell">
         </div>
-      <% end %>
-    </div>
-    <div class="week-grid">
-      <div class="empty-cell"></div>
-      <% 7.times do |i| %>
-        <div class="day-cell <%= 'today' if Date.today.wday == (i + 1) % 7 %>">
-          <div class="day-circle">
-          <% current_date = Date.today.beginning_of_week + i.days %>
-          <%= current_date.day %>
-          </div>
+    <% end %>
+  </div>
+  <div class="week-grid" data-dynamic-daybar-target="weekGrid">
+    <div class="empty-cell"></div>
+    <% 7.times do |i| %>
+      <div class="day-cell" data-dynamic-daybar-target="dayCell">
+        <div class="day-circle">
         </div>
-      <% end %>
-    </div>
-  <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-
-<div class="calendar" data-controller="time-indicator">
+<div class="time-calendar" data-controller="time-indicator">
   <% 14.times do |hour| %>
     <%= render "appointments/hour", hour: (hour + 6) %>
   <% end %>
 
   <%= render "appointments/appointments" %>
 
-<% if params[:display] != 'week' && is_today?(@day) %>
-  <div data-time-indicator-target="line" class="current-time-indicator"></div>
-<% end %>
+  <% if params[:display] != 'week' && is_today?(@day) %>
+    <div data-time-indicator-target="line" class="current-time-indicator"></div>
+  <% end %>
 </div>

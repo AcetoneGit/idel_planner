@@ -56,7 +56,7 @@
   </div>
 </div>
 
-<div data-controller="calendar">
+<div data-controller="calendar" data-calendar-start-of-week-value="<%= start_of_week.strftime('%Y-%m-%d') %>">
   <% case params[:display] %>
   <% when 'month' %>
     <%= render "appointments/show_month" %>
